@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo} from "react";
+import React, {useState, useEffect, useMemo} from "react";
 import {useHistory } from "react-router-dom";
 // import {connect} from "react-redux";
 // import {setUser} from "../../redux/actions/UserActions";
@@ -6,12 +6,31 @@ import {useHistory } from "react-router-dom";
 
 const LoginPage = (props) => {
     // const history = useHistory();
-    // const [username, setUsername] = useState("");
+    const [username, setUsername] = useState("");
     // const [password, setPassword] = useState("");
     // const [error, setError] = useState("");
 
+    function login() {
+    }
+
     return (
-        <h1>Login Page</h1>
+        <>
+        <h1 className="text-center">Login</h1>
+        <div className="form">
+            <div className="form-container">
+                <label htmlFor="username" className="text-center label">
+                    Username
+                </label>
+                <input 
+                type="text" 
+                id="username" 
+                className="input" 
+                value={username} 
+                onChange={(e) => {setUsername(e.target.value); 
+                console.log(username)}} />
+            </div>
+        </div>
+        </>
     )
 };
 export default LoginPage;
